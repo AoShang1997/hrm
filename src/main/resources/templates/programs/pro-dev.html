@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div th:replace="~{commons/nav::topbar}"></div>
+
+<div class="container">
+    <h1 style="text-align: center">Professional Development</h1>
+    <hr style="text-align: center; width: 500px; border: 2px solid darkred" />
+</div>
+
+<div class="container">
+    <p>This section is designed to help you identify learning and development opportunities that are specific to your needs.  While most of the items are conducted via classroom training or webinars, there are also self-paced options available as well. </p>
+</div>
+
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h1 style="text-align: center">Course</h1>
+            <hr style="text-align: center; width: 500px; border: 2px solid darkred" />
+            <div class="container col-md-4" th:each="course:${courses}">
+                <div class="panel panel-default col-md-10 col-md-offset-1">
+                    <div class="panel-body">
+                        <h3 style="text-align: center" th:text="${course.courseName}"></h3>
+                        <p style="text-align: center">
+                            Description
+                        </p>
+                        <p style="text-align: center">
+                            <a class="btn btn-lg" style="background-color: darkred; color: white" role="button" th:href="@{/course/}+${course.id}">
+                                Lean more
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div style="position: absolute; bottom: 0; min-height: 15%; height: 100px; width: 100%; text-align: center; background-color: black" class="footer">
+    <p style="color: white; margin-top: 8px; margin-left: 10px; text-align: left">
+        Northeastern University
+    </p>
+
+</div>
+
+</body>
+</html>

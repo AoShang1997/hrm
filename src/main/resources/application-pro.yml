@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://100.27.18.209:3306/mybatis?useUnicode=true&characterEncoding=utf8&serverTimezone=EST
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+
+mybatis:
+  type-aliases-package: com.new.hrm01.entity

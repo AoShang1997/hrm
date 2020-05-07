@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .footer a{
+            text-decoration: none;
+            color: gray;
+
+        }
+        .footer {
+            background: black;
+            color: gray;
+            font-size: 18px;
+            padding: 20px 20px;
+            margin-top: 20px;
+            text-align: center;
+
+        }
+    </style>
+</head>
+<body>
+<div th:replace="~{commons/nav::topbar}"></div>
+<div class="container">
+    <h1 style="text-align: center">
+        Login
+    </h1>
+    <hr style="text-align: center; width: 180px; border: 2px solid darkred" />
+</div>
+    <div class="container">
+        <form th:action="@{/login}" method="post">
+            <div class="form-group">
+                <label>Email</label>
+                <input name="email" type="email" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input name="password" type="password" class="form-control">
+            </div>
+            <button type="submit" class="btn" style="background-color: darkred; color: white">Login</button>
+        </form>
+    </div>
+</body>
+</html>

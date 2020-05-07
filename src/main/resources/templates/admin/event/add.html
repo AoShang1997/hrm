@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+    <link th:href="@{/webjars/bootstrap/4.4.1-1/css/bootstrap.css}" rel="stylesheet">
+</head>
+<body>
+<p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+<form th:action="@{/admin/event}" method="post">
+    <input type="hidden" name="_method" value="put" th:if="${event!=null}"/>
+    <input type="hidden" name="id" th:value="${event.id}" th:if="${event!=null}" />
+    <div class="form-group">
+        <label>Name</label>
+        <input name="eventName" type="text" class="form-control" placeholder="Title" th:value="${event!=null}?${event.eventName}">
+    </div>
+    <div class="form-group">
+        <label>Date</label>
+        <input name="date" type="text" class="form-control" placeholder="Tue May 05 01:00:00 EDT 2020" th:value="${event!=null}?${event.date}">
+    </div>
+
+    <div class="form-group">
+        <label>Introduction</label>
+        <textarea name="introduction" type="text" class="form-control" rows="5" th:text="${event!=null}?${event.introduction}">introduction</textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary" th:text="${event!=null}?'Edit':'Add'"></button>
+</form>
+</body>
+</html>

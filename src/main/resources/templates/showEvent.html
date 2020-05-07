@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${event.eventName}">Title</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div th:replace="~{commons/nav::topbar}"></div>
+
+<div class="container">
+    <h1 style="text-align: center" th:text="${event.eventName}"></h1>
+    <hr style="text-align: center; width: 500px; border: 2px solid darkred" />
+</div>
+
+<div class="container">
+    <h3 th:text="${event.date}"></h3>
+    <p th:text="${event.introduction}"></p>
+</div>
+
+
+<div style="position: absolute; bottom: 0; min-height: 15%; height: auto; width: 100%; text-align: center; background-color: black">
+    <p style="color: white; margin-top: 8px; margin-left: 10px; text-align: left">
+        Northeastern University
+    </p>
+
+</div>
+
+</body>
+</html>

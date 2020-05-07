@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .footer a{
+            text-decoration: none;
+            color: gray;
+
+        }
+        .footer {
+            background: black;
+            color: gray;
+            font-size: 18px;
+            padding: 20px 20px;
+            margin-top: 20px;
+            text-align: center;
+
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-expand-xl sticky-top" style="background: black">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">Northeastern University</a>
+    </div>
+    <div>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a th:href="@{/index}">Home</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Programs
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a th:href="@{/professional-development}">Professional Development</a></li>
+                    <li><a th:href="@{/leadership-training}">Leadership Training</a></li>
+                    <li><a th:href="@{/team-development}">Team Development</a></li>
+                </ul>
+            </li>
+            <li><a th:href="@{/about}">About</a></li>
+            <li><a th:href="@{/contact-us}">Contact Us</a></li>
+            <li><a th:href="@{/login.html}" th:text="${session.loginUser!=null?session.loginUser:'Login'}">Login</a></li>
+            <li><a href="#"></a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="jumbotron">
+        <h1>Learning & Organizational Development</h1>
+        <p>Northeastern provides a variety of opportunities for faculty and staff to broaden their knowledge in their current roles as well as to learn new skills. Human Resources Management offers workshops and leadership programs. Our catalog of training programs is published four times annually. View our course catalogue for course descriptions.</p>
+        <p><a class="btn btn-lg" style="background-color: darkred; color: white" role="button">
+            Lean more</a>
+        </p>
+    </div>
+</div>
+
+<div class="container">
+    <h1 style="text-align: center">
+        Programs
+    </h1>
+    <hr style="text-align: center; width: 180px; border: 2px solid darkred" />
+</div>
+
+<div class="container">
+    <div class="container col-md-4">
+        <div class="panel panel-default col-md-10 col-md-offset-1">
+            <div class="panel-body">
+                <p style="text-align: center">
+                    <img src="icon.png" class="img-rounded" alt="img" width="188" height="188" style="text-align: center">
+                </p>
+                <h3 style="text-align: center">Professional Development</h3>
+                <p style="text-align: center">
+
+                </p>
+                <p style="text-align: center">
+                    <a th:href="@{/professional-development}" class="btn btn-lg" style="background-color: darkred; color: white" role="button">
+                        Lean more
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container col-md-4">
+        <div class="panel panel-default col-md-10 col-md-offset-1">
+            <div class="panel-body">
+                <p style="text-align: center">
+                    <img src="icon.png" class="img-rounded" alt="img" width="188" height="188" style="text-align: center">
+                </p>
+                <h3 style="text-align: center">Leadership<br> Training</h3>
+                <p style="text-align: center">
+
+                </p>
+                <p style="text-align: center">
+                    <a th:href="@{/leadership-training}" class="btn btn-lg" style="background-color: darkred; color: white" role="button">
+                        Lean more
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container col-md-4">
+        <div class="panel panel-default col-md-10 col-md-offset-1">
+            <div class="panel-body">
+                <p style="text-align: center">
+                    <img src="icon.png" class="img-rounded" alt="img" width="188" height="188" style="text-align: center">
+                </p>
+                <h3 style="text-align: center">Team<br> Development</h3>
+                <p style="text-align: center">
+
+                </p>
+                <p style="text-align: center">
+                    <a th:href="@{/team-development}" class="btn btn-lg" style="background-color: darkred; color: white" role="button">
+                        Lean more
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h1 style="text-align: center">
+        Events
+    </h1>
+    <hr style="text-align: center; width: 180px; border: 2px solid darkred" />
+</div>
+
+<div class="container">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h3 style="text-align: center">Show calendar</h3>
+
+                <p style="text-align: center">
+                    <a th:href="@{/events}" class="btn btn-lg" style="background-color: darkred; color: white" role="button">
+                        Show all
+                    </a>
+                </p>
+            </div>
+        </div>
+</div>
+<!--
+<div style="position: absolute; min-height: 15%; height: auto; width: 100%; text-align: center; background-color: black" class="footer">
+    <p style="color: white; margin-top: 8px; margin-left: 10px; text-align: left"><a href="http://www.northeastern.edu/">Northeastern Home </a>| <a href="//my.northeastern.edu">myNEU</a> | <a href="http://www.northeastern.edu/findfacultystaff">Find Faculty &amp; Staff</a> | <a href="http://www.northeastern.edu/neuhome/adminlinks/findaz.html">Find A-Z</a> | <a href="http://www.northeastern.edu/search/index.html">Search</a></p>
+    <p style="color: white; margin-top: 8px; margin-left: 10px; text-align: left">© 2014 Northeastern University · 360 Huntington Ave., Boston, Massachusetts 02115 · 617.373.2000 · TTY 617.373.3768</p>
+</div>
+-->
+
+<div class="footer">
+
+    <p><a href="http://www.northeastern.edu/">Northeastern Home </a>| <a href="//my.northeastern.edu">myNEU</a> | <a href="http://www.northeastern.edu/findfacultystaff">Find Faculty &amp; Staff</a> | <a href="http://www.northeastern.edu/neuhome/adminlinks/findaz.html">Find A-Z</a> | <a href="http://www.northeastern.edu/search/index.html">Search</a></p>
+    <p>© 2014 Northeastern University · 360 Huntington Ave., Boston, Massachusetts 02115 · 617.373.2000 · TTY 617.373.3768</p>
+
+</div>
+
+</body>
+</html>
